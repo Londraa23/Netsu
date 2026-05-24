@@ -1,0 +1,23 @@
+{
+  "name": "netsu-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page for Netsu, a video game studio.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "gaming",
+    "studio",
+    "minecraft",
+    "netsu",
+    "landing-page"
+  ],
+  "author": "Netsu",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
