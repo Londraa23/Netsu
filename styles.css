@@ -506,6 +506,22 @@ button {
     width: 100%;
 }
 
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+@keyframes mascot-float {
+    0% { transform: translateY(0) rotate(1.5deg) scale(1); }
+    100% { transform: translateY(-15px) rotate(-1.5deg) scale(1.02); }
+}
+
 .hero-main-info {
     max-width: 700px;
     display: flex;
@@ -563,7 +579,7 @@ button {
 /* Diagonal Section Separator */
 .section-slant {
     position: absolute;
-    top: calc(-5vw + 1px); /* The slant will rise upwards, offset by 1px to prevent sub-pixel gaps */
+    top: 0; /* Positioned at the top of the clipped section */
     left: 0;
     width: 100%;
     height: 5vw; /* Controls the steepness of the slant */
@@ -575,6 +591,10 @@ button {
     width: 100%;
     height: 100%;
     display: block;
+}
+
+.slant-svg line {
+    stroke: var(--color-dark);
 }
 
 /* 6. IMMERSIVE GAME-SLIDE LAYOUT (FULL-SCREEN EXPERIENCE) */
@@ -629,18 +649,26 @@ button {
 /* Individual Slide Theme Backgrounds - Solid flat brand colors for a seamless Mediatonic cartoon style */
 .slide-letal {
     background-color: #820c24;
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 .slide-honeymc {
     background-color: #e28a07;
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 .slide-about {
     background-color: #1b143f;
+    clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 .slide-hubs {
     background-color: #0c0920;
+    clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 .hubs-partners-sub {
@@ -717,6 +745,8 @@ button {
 
 .slide-careers {
     background-color: #009bb4;
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 .slide-careers .section-subtitle {
     color: rgba(255, 255, 255, 0.95);
@@ -727,6 +757,8 @@ button {
     background-color: var(--color-orange);
     padding: 10rem 0;
     border-bottom: none; /* Last section doesn't need bottom border */
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 /* Patterns overlays for slides background - Custom themed per slide */
@@ -1349,11 +1381,13 @@ button {
 /* 11. FOOTER (Playful, deep layout) */
 .site-footer {
     background-color: var(--bg-darker);
-    border-top: var(--border-stroke);
-    padding-top: 5rem;
+    border-top: none;
+    padding-top: 8rem;
     padding-bottom: 2.5rem;
     position: relative;
     z-index: 2;
+    clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+    margin-top: calc(-5vw + 1px);
 }
 
 .footer-container {
@@ -1472,6 +1506,22 @@ button {
 
 /* 12. RESPONSIVE NAVIGATION STYLES REMOVED */
 @media (max-width: 991px) {
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    .hero-main-info {
+        align-items: center;
+        max-width: 100%;
+        padding-bottom: 0;
+    }
+    .hero-mascot-box {
+        margin: 0 auto;
+    }
+    .hero-mascot-img {
+        max-width: 320px;
+    }
     .slide-grid {
         grid-template-columns: 1fr;
         gap: 3.5rem;
